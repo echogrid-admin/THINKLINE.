@@ -1,4 +1,11 @@
 <script>
+  // Check if user is logged in
+const { data, error } = await supabase.auth.getSession();
+
+if (!data.session) {
+  // Not logged in? Redirect to login page
+  window.location.href = "/admin/login.html";
+}
   const supabase = supabase.createClient(
     'YOUR_SUPABASE_URL',
     'YOUR_SUPABASE_KEY'
