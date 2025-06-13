@@ -13,5 +13,10 @@
     }
   }
   
-  checkAuth();
+  checkAuth(); 
+    // Add to dashboard.html
+document.getElementById('logout').addEventListener('click', async () => {
+  await supabase.auth.signOut();
+  window.location.href = '/admin/login.html';
+});
 </script>
