@@ -1,4 +1,21 @@
-<script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+  <div id="editor">
+    <h2>Add/Edit Content</h2>
+    <input type="text" id="title" placeholder="Title">
+    <input type="text" id="slug" placeholder="URL Slug (e.g., 'about')">
+    <textarea id="content" rows="10"></textarea>
+    <button id="save">Save Page</button>
+  </div>
+
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+ <script>
   // Check if user is logged in
 const { data, error } = await supabase.auth.getSession();
 
@@ -27,3 +44,6 @@ document.getElementById('logout').addEventListener('click', async () => {
   window.location.href = '/admin/login.html';
 });
 </script>
+
+</body>
+</html>
